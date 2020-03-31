@@ -126,7 +126,7 @@ spring.datasource.driver-class-name = com.mysql.cj.jdbc.Driver
 
 過去SSH/J2EE時代，大家慣用的是Hibernate或JPA規格的ORM，但後來發現這類ORM太過厚重、學習曲線陡峭，而且生成的SQL效能不佳，這對SQL效能有著嚴格要求的現代企業應用已不合時宜，因此大多轉移至較輕量級的ORM系統：開發者自行編寫SQL query，ORM僅負責object mapping工作。
 
-同樣的，引入starter包，然後在希望進行object mapping工作的interface上標上`@Mapping` annotation與SQL query即可。
+同樣的，引入starter包，然後在希望進行object mapping工作的interface上標上`@Mapper` annotation與SQL query即可。
 
 ```xml
 <!-- pom.xml -->
@@ -145,7 +145,7 @@ public interface UserMapper {
     @Options(useGeneratedKeys=true, keyProperty="id")
     int insert(User user);
 
-    @Select("SELECT * FROM user WHERE id = #{id}")
+    @Select("SELECT id, gmt_created, name  FROM user WHERE id = #{id}")
     User findById(long id);
 }
 ```

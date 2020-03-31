@@ -13,9 +13,9 @@ public interface UserMapper {
     @Options(useGeneratedKeys=true, keyProperty="id")
     int insert(User user);
 
-    @Select("SELECT * FROM user WHERE id = #{id}")
+    @Select("SELECT id, gmt_created, name FROM user WHERE id = #{id}")
     User findById(long id);
 
-    @Select("SELECT * FROM user WHERE name = #{name}")
+    @Select("SELECT id, gmt_created, name FROM user WHERE name = #{name}")
     User findByName(String name);
 }
