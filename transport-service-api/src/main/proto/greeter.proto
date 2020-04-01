@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;//以非外部类模式生成
+option java_package = "com.jkopay.industry.transport.grpc";//所在包名
+option java_outer_classname = "Grpc";//最外层类名称
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}

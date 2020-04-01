@@ -12,7 +12,7 @@ import static com.jkopay.industry.transport.dubbo.api.Result.failedResult;
 import static com.jkopay.industry.transport.dubbo.api.Result.success;
 
 
-@Service(interfaceClass = com.jkopay.industry.transport.dubbo.QRCodeValidateService.class)
+@Service(interfaceClass = QRCodeValidateService.class)
 public class QRCodeValidateServiceImpl implements QRCodeValidateService {
 
     private KafkaTemplate<Object, Object> kafkaTemplate;

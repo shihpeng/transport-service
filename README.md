@@ -35,7 +35,7 @@ public interface QRCodeValidateService {
 
 ```
 # application.properties
-dubbo.scan.base-packages = com.jkopay.industry.transport.dubbo
+dubbo.scan.base-packages = com.jkopay.industry.transport.transport.dubbo
 dubbo.registry.address = N/A
 ```
 
